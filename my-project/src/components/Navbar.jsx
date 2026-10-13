@@ -11,6 +11,7 @@ function Navbar({ activePage, onNavigate, user, onLogout }) {
   const userLinks = [
     { key: 'portfolio', label: 'Portfolio' },
     { key: 'transactions', label: 'History' },
+    { key: 'chatbot', label: 'ChatBot' },
   ]
 
   return (

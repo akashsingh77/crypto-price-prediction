@@ -11,7 +11,13 @@ const favoriteRoutes = require('./routes/favoriteRoutes');
 const userRoutes = require('./routes/userRoutes');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
+
 const app = express();
+const chatbotRoutes = require("./routes/chatbotRoutes");
+
+app.use(express.json());
+
+app.use("/api/chatbot", chatbotRoutes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

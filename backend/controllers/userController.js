@@ -45,9 +45,16 @@ exports.createTrade = async (req, res, next) => {
 
 exports.getProfile = async (req, res, next) => {
   try {
-    const user = await User.findById(req.user._id).select('-password').populate('favorites');
-    if (!user) return res.status(404).json({ message: 'User not found' });
-    res.json(user);
+    const user = await User.findById(req.user._id).select('-password');
+
+    const favorites = await Favorite.find({
+      userId: req.user._id,
+    });
+
+    res.json({
+      user,
+      favorites,
+    });
   } catch (error) {
     next(error);
   }

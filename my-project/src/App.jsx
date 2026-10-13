@@ -11,6 +11,7 @@ import Favorites from './pages/Favorites'
 import Portfolio from './pages/Portfolio'
 import Transactions from './pages/Transactions'
 import { fetchFavorites, addFavorite, removeFavorite, fetchCoins, fetchProfile } from './api/api'
+import ChatBot from "./pages/ChatBot";
 
 function App() {
   const [activePage, setActivePage] = useState('home')
@@ -162,6 +163,10 @@ function App() {
     if (activePage === 'transactions') {
       return <Transactions />
     }
+      // ChatBot Page
+  if (activePage === 'chatbot') {
+    return <ChatBot />
+  }
 
     return <Home onNavigate={handleNavigate} />
   }
