@@ -1,5 +1,4 @@
-
-# Protect environment files
+# Environment secrets
 .env
 .env.*
 !.env.example
@@ -7,6 +6,5 @@
 # Dependencies
 node_modules/
 
-# Build files
+# Build output
 dist/
-dist-ssr/
